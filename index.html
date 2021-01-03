@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=B612&display=swap" rel="stylesheet">
+    <link href='https://css.gg/check-r.css' rel='stylesheet'>
+</head>
+
+<body>
+    <audio src="audio/AlarmSound.mp3" id="sound" style="display: none;"></audio>
+
+    <div id="container">
+        <div id="grid-container">
+            <img src="https://www.transparentpng.com/thumb/tomato/dpqY4o-download-tomato.png"
+                alt="Download Tomato @transparentpng.com">
+            <div class="top-buttons">
+                <div id="options">
+                    <button type="button" id="pomodoro">Pomodoro</button>
+                    <button type="button" id="rest">Short Break</button>
+                    <button type="button" id="longRest">Long Break</button>
+                </div>
+            </div>
+
+            <div class="timer">
+                <span id="minutes">25</span>
+                <span id="dot">:</span>
+                <span id="seconds">00</span>
+            </div>
+
+            <div class="bottom-buttons">
+                <button type="button" id="start">Start</button>
+                <button type="button" id="reset">Reset</button>
+            </div>
+        </div>
+    </div>
+    <div id="container-2">
+        <div id="about">
+        <h1 id="header">
+            The Pomodoro Technique
+        </h1>
+        <h3>consists in a Time Management technique that increase your productivity based on job focus period -25min- interspersed with short rest period -5min-</h3>
+        <h5>but... if you are very tired, you can opt for a longer rest</h5>
+        </div>
+        <div id="tutorial">
+        <h1 id="header-2">
+            The Six Steps of Pomodoro
+        </h1>
+        <h4>
+            1-Choose a task you'd like to complete
+        </h4>
+        <h4>
+            2-Set the Pomodoro Timer (25:00)
+        </h4>
+        <h4>
+            3- Once you start, be fully focused until time runs out
+        </h4>
+        <h4>
+            4- When the Pomodoro rings a alert, your first task is done!
+        </h4>
+        <h4 id="tutorial-5">
+            5- A SHORT BREAK... [5:00]
+        </h4>
+        <h4>
+            6- Every 4 Pomodoros, take a longer break [15:00]
+        </h4>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

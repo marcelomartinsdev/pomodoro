@@ -1,0 +1,127 @@
+/** GLOBAL STYLES **/ 
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'B612', sans-serif;
+}
+
+body {
+    
+    font-weight: 400;
+}
+
+#container {
+    max-width: 100vw; 
+    min-height: 100vh;
+    background-color: #DB524D;
+    padding: 1em;
+}
+
+#container-2 {
+    max-width: 100vw;
+    min-height: 100vh;
+    background-color: #f3c9c9;
+    padding: 1.5rem;
+}
+/** Phone Styles **/
+
+@media screen and (min-width: 320px) {
+    #container {
+        display: flex;
+        align-items: center;
+    }
+
+    #grid-container {
+        display: grid;
+        grid-template-rows: 5rem 7rem 7rem 5rem;
+        align-items: center;
+    }
+
+    #grid-container > img {
+        height: 5rem;
+        margin-bottom: 1rem;
+    }
+
+    #options > button {
+        height: 3rem;
+        font-size: 1rem;
+        cursor: pointer;
+        color: white;
+        border: none;
+        background-color: rgba(0,0,0,0.18);
+        border-radius: 0.2rem;
+        padding: .5rem;
+    }
+
+    #options > button:focus {
+        outline: none;
+        box-shadow: none;
+        background-color: rgba(0,0,0,0.3);
+    }
+
+    #minutes {
+        font-size: 5rem;
+    }
+
+    #dot {
+        font-size: 3rem;
+    }
+
+    #seconds {
+        font-size: 5rem;
+    }
+
+    .bottom-buttons > button {
+        height: 3rem;
+        width: 5rem;
+        font-size: 1rem;
+        cursor: pointer;
+        color: white;
+        border: none;
+        background-color: rgba(0,0,0,0.08);
+        border-radius: 0.2rem;
+        padding: .5rem;
+    }
+
+    .bottom-buttons > button:focus {
+        outline: none;
+        box-shadow: none;
+        background-color: rgba(0,0,0,0.2);
+    }
+
+    #container-2 h1 {
+        font-size: 2rem;
+        text-decoration: underline;
+        text-decoration-color: rgba(0,0,0,0.2);
+    }
+
+    #container-2 #about h1 {
+        padding-bottom: 0.2rem;
+    }
+
+    #container-2 #tutorial {
+        padding-top: 2rem;
+    }
+
+
+    #container-2 #tutorial h4 {
+        padding-top: 0.6rem;
+    }
+
+    #container-2 #tutorial i {
+        height: 3px;
+        margin-top: -1.2rem;
+        margin-right: 1px;
+    }
+
+}
+
+@media screen and (min-width: 750px) {
+    #container-2 {
+        text-align: center;
+        padding-left: 3rem;
+        padding-right: 3rem;
+        padding: 5rem;
+    }
+}
