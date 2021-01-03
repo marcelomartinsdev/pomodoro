@@ -17,44 +17,56 @@ window.addEventListener("load", () => {
     let UnderlineColor2 = document.getElementById("header-2");
 
     pomodoroButton.addEventListener("click", () => {
-        startMinutes = pomodoroMin;
-        PomodoroBgColor.style.backgroundColor = "#DB524D";
-        PomodoroBgColor.style.transition = "1s";
-        UnderlineColor.style.textDecorationColor = "#DB524D"
-        UnderlineColor.style.transition = "1s";
-        UnderlineColor2.style.textDecorationColor = "#DB524D"
-        UnderlineColor2.style.transition = "1s";
-        startSeconds = 60;
-        displayMinutes.innerText = `${startMinutes + 1}`;
-        displaySeconds.innerText = "00";
+        if(isTimerOff) {
+            PomodoroBgColor.style.backgroundColor = "#DB524D";
+            PomodoroBgColor.style.transition = "1s";
+            UnderlineColor.style.textDecorationColor = "#DB524D"
+            UnderlineColor.style.transition = "1s";
+            UnderlineColor2.style.textDecorationColor = "#DB524D"
+            UnderlineColor2.style.transition = "1s";
+            
+            startMinutes = pomodoroMin;
+            startSeconds = 60;
+            
+            displayMinutes.innerText = `${startMinutes + 1}`;
+            displaySeconds.innerText = "00";
+        }
     });
 
     restButton.addEventListener("click", () => {
-        PomodoroBgColor.style.backgroundColor = "#437EA8";
-        PomodoroBgColor.style.transition = "1s";
-        UnderlineColor.style.textDecorationColor = "#437EA8"
-        UnderlineColor.style.transition = "1s";
-        UnderlineColor2.style.textDecorationColor = "#437EA8"
-        UnderlineColor2.style.transition = "1s";
-        startMinutes = restMin;
-        startSeconds = 60;
+        if(isTimerOff) {
+            PomodoroBgColor.style.backgroundColor = "#437EA8";
+            PomodoroBgColor.style.transition = "1s";
+            UnderlineColor.style.textDecorationColor = "#437EA8"
+            UnderlineColor.style.transition = "1s";
+            UnderlineColor2.style.textDecorationColor = "#437EA8"
+            UnderlineColor2.style.transition = "1s";
+            
+            startMinutes = restMin;
+            startSeconds = 60;
 
-        displayMinutes.innerText = `0${startMinutes + 1}`;
-        displaySeconds.innerText = "00";
+            displayMinutes.innerText = `0${startMinutes + 1}`;
+            displaySeconds.innerText = "00";
+        }
+
     });
 
     longRestButton.addEventListener("click", () => {
-        PomodoroBgColor.style.backgroundColor = "#235172";
-        PomodoroBgColor.style.transition = "1s";
-        UnderlineColor.style.textDecorationColor = "#235172"
-        UnderlineColor.style.transition = "1s";
-        UnderlineColor2.style.textDecorationColor = "#235172"
-        UnderlineColor2.style.transition = "1s";
-        startMinutes = longRestMin;
-        startSeconds = 60;
+        if(isTimerOff) {
+            PomodoroBgColor.style.backgroundColor = "#235172";
+            PomodoroBgColor.style.transition = "1s";
+            UnderlineColor.style.textDecorationColor = "#235172"
+            UnderlineColor.style.transition = "1s";
+            UnderlineColor2.style.textDecorationColor = "#235172"
+            UnderlineColor2.style.transition = "1s";
+            
+            startMinutes = longRestMin;
+            startSeconds = 60;
 
-        displayMinutes.innerText = `${startMinutes + 1}`;
-        displaySeconds.innerText = "00";
+            displayMinutes.innerText = `${startMinutes + 1}`;
+            displaySeconds.innerText = "00";
+        }
+
     });
 
     startButton.addEventListener("click", startTimer);
