@@ -120,6 +120,37 @@ body {
         margin-right: 1px;
     }
 
+    .footer {
+        display: grid;
+        margin-top: 2rem;
+        grid-template-rows: 4.5rem 2rem 1rem;
+        background-color: rgba(219, 82, 77, 0.1);
+        border-radius: 4px;
+    }
+
+    .footer__links {
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .footer__links a {
+        color: inherit;
+    }
+
+    .footer__credits {
+        width: 100%;
+        position: relative;
+        display: flex;
+        text-align: center;
+        align-items: center;
+    }
+
+    .footer__allrights {
+        font-size: 0.7rem;
+    }
+
 }
 
 @media screen and (min-width: 750px) {
@@ -128,6 +159,12 @@ body {
         padding-left: 3rem;
         padding-right: 3rem;
         padding: 5rem;
+    }
+
+    .footer {
+        margin-left: 10rem;
+        margin-right: 10rem;
+        margin-top: 5rem;
     }
 }
 
