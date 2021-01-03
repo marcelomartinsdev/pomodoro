@@ -133,7 +133,7 @@ body {
 
 @keyframes ContentLoad {
     0% {
-        transform: translateY(-150%);
+        transform: translateY(-200%);
     }
 
     100% {
