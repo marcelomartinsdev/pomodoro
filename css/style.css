@@ -23,6 +23,7 @@ body {
     background-color: #f3c9c9;
     padding: 1.5rem;
 }
+
 /** Phone Styles **/
 
 @media screen and (min-width: 320px) {
@@ -92,7 +93,7 @@ body {
     #container-2 h1 {
         font-size: 2rem;
         text-decoration: underline;
-        text-decoration-color: rgba(0,0,0,0.2);
+        text-decoration-color: rgb(219, 82, 77);
     }
 
     #container-2 #about h1 {

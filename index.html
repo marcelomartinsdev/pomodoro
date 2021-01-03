@@ -31,9 +31,9 @@
                 alt="Download Tomato @transparentpng.com">
             <div class="top-buttons">
                 <div id="options">
-                    <button type="button" id="pomodoro">Pomodoro</button>
-                    <button type="button" id="rest">Short Break</button>
-                    <button type="button" id="longRest">Long Break</button>
+                    <button type="button" id="pomodoro" onclick="changeTimer('DB524D', 1)">Pomodoro</button>
+                    <button type="button" id="rest" onclick="changeTimer('437EA8', 2)">Short Break</button>
+                    <button type="button" id="longRest" onclick="changeTimer('235172', 3)">Long Break</button>
                 </div>
             </div>
 
@@ -51,14 +51,14 @@
     </div>
     <div id="container-2">
         <div id="about">
-        <h1 id="header">
+        <h1 class="header">
             The Pomodoro Technique
         </h1>
         <h3>consists in a Time Management technique that increase your productivity based on job focus period -25min- interspersed with short rest period -5min-</h3>
         <h5>but... if you are very tired, you can opt for a longer rest</h5>
         </div>
         <div id="tutorial">
-        <h1 id="header-2">
+        <h1 class="header">
             The Six Steps of Pomodoro
         </h1>
         <h4>
@@ -81,7 +81,7 @@
         </h4>
         </div>
     </div>
-
+    
     <script src="js/script.js"></script>
 </body>
 
