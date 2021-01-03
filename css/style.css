@@ -6,6 +6,13 @@
     font-family: 'B612', sans-serif;
 }
 
+@font-face {
+    font-family: 'B612', sans-serif;
+    src: url(https://fonts.googleapis.com/css2?family=B612&display=swap);
+    font-style: normal;
+    font-display: swap;
+}
+
 body {
     font-weight: 400;
 }
@@ -128,7 +135,7 @@ body {
     .footer {
         display: grid;
         grid-template-rows: 4.5rem 2rem 1rem;
-        background-color: rgba(219, 82, 77, 0.1);
+        background-color: rgba(219, 82, 77, 0.2);
         border-radius: 4px;
         margin: 0;
         margin-top: auto;
