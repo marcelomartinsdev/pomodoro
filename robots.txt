@@ -1,0 +1,8 @@
+Sitemap: https://pomo-timer.com/sitemap.xml
+
+User-agent: *
+Allow: /
+Disallow: /assets/
+Disallow: /audio/
+Disallow: /.vscode/
+
