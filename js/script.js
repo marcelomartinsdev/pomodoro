@@ -1,4 +1,6 @@
 window.addEventListener("load", () => {
+    const sound = document.querySelector("#sound");
+    const setting = document.querySelector("#btnSettings");
     const startButton = document.querySelector("#start");
     const resetButton = document.querySelector("#reset");
     const displayMinutes = document.querySelector("#minutes");
@@ -9,6 +11,30 @@ window.addEventListener("load", () => {
     let startMinutes = 24;
     let startSeconds = 60;
     let isTimerOff = true;
+    let showSet = true;
+
+    sound.volume = 0.5;
+    setting.addEventListener("click", settings);
+
+    function settings() {
+        const volume = document.querySelector("#audioVol");
+
+        if(showSet) {
+            showSet = false;
+
+            volume.style.display = "inline";
+            volume.style.display = "inline";
+
+            volume.addEventListener("change", () => {
+                sound.volume = volume.value / 10;
+            });
+        } else {
+            showSet = true;
+
+            volume.style.display = "none";
+            volume.style.display = "none";
+        }
+    }
 
     window.changeTimer = function (color, option) {
         if(isTimerOff) {
@@ -60,7 +86,7 @@ window.addEventListener("load", () => {
                         currentMinutes--;
                         currentSeconds = startSeconds;
                     } else {
-                        document.querySelector("#sound").play();
+                        sound.play();
 
                         clearInterval(interval);
 
