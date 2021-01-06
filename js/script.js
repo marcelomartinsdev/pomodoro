@@ -26,6 +26,8 @@ window.addEventListener("load", () => {
             divSet.style.display = "flex";
 
             inputVol.addEventListener("change", () => {
+                document.querySelector(".volume")
+                    .innerText = `Volume: ${inputVol.value}`
                 sound.volume = inputVol.value / 10;
             });
         } else {
