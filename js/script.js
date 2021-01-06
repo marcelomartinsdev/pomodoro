@@ -23,7 +23,7 @@ window.addEventListener("load", () => {
         if(showSet) {
             showSet = false;
 
-            divSet.style.display = "inline";
+            divSet.style.display = "flex";
 
             inputVol.addEventListener("change", () => {
                 sound.volume = inputVol.value / 10;
