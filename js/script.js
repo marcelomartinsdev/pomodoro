@@ -18,12 +18,13 @@ window.addEventListener("load", () => {
 
     function settings() {
         const volume = document.querySelector("#audioVol");
+        const settingsContainer = document.querySelector(".settings-container");
 
         if(showSet) {
             showSet = false;
 
             volume.style.display = "inline";
-            volume.style.display = "inline";
+            settingsContainer.style.display = "flex";
 
             volume.addEventListener("change", () => {
                 sound.volume = volume.value / 10;
@@ -32,13 +33,13 @@ window.addEventListener("load", () => {
             showSet = true;
 
             volume.style.display = "none";
-            volume.style.display = "none";
+            settingsContainer.style.display = "none";
         }
     }
 
     window.changeTimer = function (color, option) {
         if(isTimerOff) {
-            const container = document.querySelector("#container");
+            const container = document.querySelector(".container");
             const titleHeader = document.querySelectorAll(".header");
     
             container.style.backgroundColor = `#${color}`;

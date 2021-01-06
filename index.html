@@ -39,13 +39,15 @@
 
 <body>
     <audio src="audio/AlarmSound.mp3" id="sound" style="display: none;"></audio>
-    <div id="container">
-
-        <div id="settings">
-            <button id="btnSettings">Settings</button>
+    <div class="container">
+        <div class="header">
+            <div id="settings">
+                <i class="fa fa-cog fa-2x" id="btnSettings" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="settings-container">
             <input type="range" id="audioVol" max="10" min="0" style="display: none;">
         </div>
-
         <div id="grid-container">
             <img id="logo-img" src="./assets/tomato-img.png" alt="Download Tomato @transparentpng.com">
             <div class="top-buttons">
@@ -70,7 +72,7 @@
     </div>
     <div id="container-2">
         <div id="about">
-            <h1 class="header">
+            <h1 class="header-2">
                 The Pomodoro Technique
             </h1>
             <h3>consists in a Time Management technique that increase your productivity based on job focus period
@@ -78,7 +80,7 @@
             <h5>but... if you are very tired, you can opt for a longer rest</h5>
         </div>
         <div id="tutorial">
-            <h1 class="header">
+            <h1 class="header-2">
                 The Six Steps of Pomodoro
             </h1>
             <h4>
