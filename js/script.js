@@ -43,7 +43,7 @@ window.addEventListener("load", () => {
     window.changeTimer = function (color, option) {
         if(isTimerOff) {
             const container = document.querySelector(".container");
-            const titleHeader = document.querySelectorAll(".header");
+            const titleHeader = document.querySelectorAll(".header-2");
     
             container.style.backgroundColor = `#${color}`;
             container.style.transition = "1s";
