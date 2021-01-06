@@ -41,6 +41,7 @@ body {
     display: none;
     border-radius: 8px;
     justify-content: center;
+    flex-direction: column;
     left: 0;
     right: 0;
     width: 15rem;
