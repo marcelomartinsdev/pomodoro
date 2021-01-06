@@ -23,7 +23,9 @@ window.addEventListener("load", () => {
         if(showSet) {
             showSet = false;
 
-            divSet.style.display = "flex";
+            divSet.style.opacity = "1";
+            divSet.style.visibility = "visible";
+
 
             inputVol.addEventListener("change", () => {
                 document.querySelector(".volume")
@@ -33,7 +35,8 @@ window.addEventListener("load", () => {
         } else {
             showSet = true;
 
-            divSet.style.display = "none";
+            divSet.style.visibility = "hidden";
+            divSet.style.opacity = "0";
         }
     }
 

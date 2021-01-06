@@ -38,14 +38,18 @@ body {
 .settings-container {
     background-color: #fff;
     position: absolute;
-    display: none;
+    visibility: hidden;
     border-radius: 8px;
+    display: flex;
     justify-content: center;
     flex-direction: column;
     left: 0;
     right: 0;
     width: 15rem;
     height: 20rem;
+    transition: visibility .5s, opacity .5s linear;
+    filter: drop-shadow(8px 8px 8px rgba(0, 0, 0, 0.8));
+    opacity: 0;
 }
 
 /** Phone Styles **/
