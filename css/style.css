@@ -47,10 +47,6 @@ body {
     height: 20rem;
 }
 
-#settings i {
-    cursor: pointer;
-}
-
 /** Phone Styles **/
 
 @media screen and (min-width: 320px) {
@@ -62,6 +58,10 @@ body {
     .header {
         top: 2rem;
         left: 80vw;
+    }
+
+    .header i {
+        cursor: pointer;
     }
 
     #grid-container {

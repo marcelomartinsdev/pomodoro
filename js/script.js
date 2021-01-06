@@ -17,23 +17,21 @@ window.addEventListener("load", () => {
     setting.addEventListener("click", settings);
 
     function settings() {
-        const volume = document.querySelector("#audioVol");
-        const settingsContainer = document.querySelector(".settings-container");
+        const divSet = document.querySelector(".settings-container");
+        const inputVol = document.querySelector("#audioVol");
 
         if(showSet) {
             showSet = false;
 
-            volume.style.display = "inline";
-            settingsContainer.style.display = "flex";
+            divSet.style.display = "inline";
 
-            volume.addEventListener("change", () => {
-                sound.volume = volume.value / 10;
+            inputVol.addEventListener("change", () => {
+                sound.volume = inputVol.value / 10;
             });
         } else {
             showSet = true;
 
-            volume.style.display = "none";
-            settingsContainer.style.display = "none";
+            divSet.style.display = "none";
         }
     }
 
