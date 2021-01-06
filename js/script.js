@@ -1,19 +1,49 @@
 window.addEventListener("load", () => {
+    const sound = document.querySelector("#sound");
+    const setting = document.querySelector("#btnSettings");
     const startButton = document.querySelector("#start");
     const resetButton = document.querySelector("#reset");
-    const displayMinutes = document.querySelector("#minutes");
-    const displaySeconds = document.querySelector("#seconds");
+    const displayMinutes = document.querySelector(".minutes");
+    const displaySeconds = document.querySelector(".seconds");
     const pomodoroMin = 24;
     const restMin = 4;
     const longRestMin = 14;
     let startMinutes = 24;
     let startSeconds = 60;
     let isTimerOff = true;
+    let showSet = true;
+
+    sound.volume = 0.5;
+    setting.addEventListener("click", settings);
+
+    function settings() {
+        const divSet = document.querySelector(".settings-container");
+        const inputVol = document.querySelector("#audioVol");
+
+        if(showSet) {
+            showSet = false;
+
+            divSet.style.opacity = "1";
+            divSet.style.visibility = "visible";
+
+
+            inputVol.addEventListener("change", () => {
+                document.querySelector(".volume")
+                    .innerText = `Volume: ${inputVol.value}`
+                sound.volume = inputVol.value / 10;
+            });
+        } else {
+            showSet = true;
+
+            divSet.style.visibility = "hidden";
+            divSet.style.opacity = "0";
+        }
+    }
 
     window.changeTimer = function (color, option) {
         if(isTimerOff) {
-            const container = document.querySelector("#container");
-            const titleHeader = document.querySelectorAll(".header");
+            const container = document.querySelector(".container");
+            const titleHeader = document.querySelectorAll("h1");
     
             container.style.backgroundColor = `#${color}`;
             container.style.transition = "1s";
@@ -60,7 +90,7 @@ window.addEventListener("load", () => {
                         currentMinutes--;
                         currentSeconds = startSeconds;
                     } else {
-                        document.querySelector("#sound").play();
+                        sound.play();
 
                         clearInterval(interval);
 

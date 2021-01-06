@@ -13,7 +13,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PomoTimer - #1 Pomodoro Timer App inspired in Pomodoro Technique</title>
+    <title>PomoTimer - A Pomodoro Timer App inspired in Pomodoro Technique</title>
     <meta name="description"
         content="A Pomodoro Technique Timer app that you can use in every device. Pomo-timer will help you manage your tasks and complete them.">
     <meta name="keywords"
@@ -24,6 +24,11 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pomo-timer.com">
     <meta property="og:image" content="./assets/pomo-timer.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="https://pomo-timer.com">
+    <meta name="twitter:title" content="PomoTimer">
+    <meta name="twitter:description" content="PomoTimer - A Pomodoro Timer App inspired in Pomodoro Technique">
+    <meta name="twitter:image" content="./assets/pomo-timer.png">
     <link rel="canonical" href="https://pomo-timer.com" />
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
@@ -39,96 +44,152 @@
 
 <body>
     <audio src="audio/AlarmSound.mp3" id="sound" style="display: none;"></audio>
+    <section>
+        <div class="container">
+            <div class="header">
+                <i class="fa fa-cog fa-2x" id="btnSettings" aria-hidden="true"></i>
+            </div>
+            <div class="settings-container">
+                <label class="volume">Volume: 5</label>
+                <input type="range" id="audioVol" max="10" min="0">
+            </div>
 
-    <div id="container">
-        <div id="grid-container">
-            <img id="logo-img" src="./assets/tomato-img.png" alt="Download Tomato @transparentpng.com">
-            <div class="top-buttons">
-                <div id="options">
+            <div class="grid-container">
+                <img id="logo-img" src="./assets/tomato-img.png" alt="Download Tomato @transparentpng.com">
+
+                <div class="options">
                     <button type="button" id="pomodoro" onclick="changeTimer('DB524D', 1)">Pomodoro</button>
                     <button type="button" id="rest" onclick="changeTimer('437EA8', 2)">Short Break</button>
                     <button type="button" id="longRest" onclick="changeTimer('235172', 3)">Long Break</button>
                 </div>
-            </div>
 
-            <div class="timer">
-                <span id="minutes">25</span>
-                <span id="dot">:</span>
-                <span id="seconds">00</span>
-            </div>
-
-            <div class="bottom-buttons">
-                <button type="button" id="start">Start</button>
-                <button type="button" id="reset">Reset</button>
-            </div>
-        </div>
-    </div>
-    <div id="container-2">
-        <div id="about">
-            <h1 class="header">
-                The Pomodoro Technique
-            </h1>
-            <h3>consists in a Time Management technique that increase your productivity based on job focus period
-                -25min- interspersed with short rest period -5min-</h3>
-            <h5>but... if you are very tired, you can opt for a longer rest</h5>
-        </div>
-        <div id="tutorial">
-            <h1 class="header">
-                The Six Steps of Pomodoro
-            </h1>
-            <h4>
-                1-Choose a task you'd like to complete
-            </h4>
-            <h4>
-                2-Set the Pomodoro Timer (25:00)
-            </h4>
-            <h4>
-                3- Once you start, be fully focused until time runs out
-            </h4>
-            <h4>
-                4- When the Pomodoro rings a alert, your first task is done!
-            </h4>
-            <h4 id="tutorial-5">
-                5- A SHORT BREAK... [5:00]
-            </h4>
-            <h4>
-                6- Every 4 Pomodoros, take a longer break [15:00]
-            </h4>
-        </div>
-        <div class="footer">
-            <div class="footer__links">
-                <div class="first">
-                    <a href="https://linkedin.com/in/marcelo-martins-moreira/" target="__blank">
-                        <i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i>
-                    </a>
-                    <a href="https://github.com/marcelomartinsdev/" target="__blank">
-                        <i class="fa fa-github-square fa-3x" aria-hidden="true"></i>
-                    </a>
+                <div class="timer">
+                    <span class="minutes">25</span>
+                    <span class="dot">:</span>
+                    <span class="seconds">00</span>
                 </div>
 
-                <div class="second">
-                    <a href="https://linkedin.com/in/marcoscoutinhodev/" target="__blank">
-                        <i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i>
-                    </a>
-                    <a href="https://github.com/marcoscoutinhodev" target="__blank">
-                        <i class="fa fa-github-square fa-3x" aria-hidden="true"></i>
-                    </a>
+                <div class="bottom-buttons">
+                    <button type="button" id="start">Start</button>
+                    <button type="button" id="reset">Reset</button>
                 </div>
-            </div>
-            <div class="footer__credits">
-                <div class="first-credits">
-                    <span>Made by <span style="color: #DB524D;">Marcelo</span></span>
-                </div>
-                &
-                <div class="second-credits">
-                    <span>Made by <span style="color:#DB524D;">Marcos</span></span>
-                </div>
-            </div>
-            <div class="footer__allrights">
-                ©Pomo-Timer 2021. All Rights Reserved.
             </div>
         </div>
-    </div>
+    </section>
+
+    <section>
+        <div class="container-2">
+
+            <div class="description">
+                <div class="description__about">
+                    <h1 class="header__about-pomotimer">
+                        What`s PomoTimer?
+                    </h1>
+                    <p>
+                        <span style="color: var(--primary-color);">PomoTimer</span> it's an flexible, mobile friendly and easy to use Pomodoro Technique Timer. It's a mix
+                        of inspirations of other similar apps but with the best part of each them.
+                    </p>
+                    <p>
+                        The main inspiration for design and layout was <span style="color: var(--primary-color);">Pomofocus</span>, that's one of the most famous similar
+                        App and was made by a young developer like us <i class="fa fa-smile-o" aria-hidden="true"></i>
+                    </p>
+                    <p>Another big inspiration was <span style="color: var(--primary-color);">TomatoTimer</span>, that have a lot of cool funcionalities that we want to
+                        apply in future updates <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                    </p>
+                    <p>
+                        We hope you enjoy using <span style="color: var(--primary-color);">PomoTimer</span> and if you really like it, please share with your friends 
+                    </p>
+                    <div class="share-links">
+                            <a target="__blank" href="https://www.facebook.com/sharer/sharer.php?u=pomo-timer.com">
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                            </a>
+                            <a target="__blank" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//pomo-timer.com&title=Discover%20this%20incredible%20application%20for%20productivity!&summary=PomoTimer%20-%20A%20Pomodoro%20Timer%20App%20inspired%20in%20Pomodoro%20Technique&source=">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                            <a target="__blank" href="https://api.whatsapp.com/send?text=pomo-timer.com">
+                                <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                            </a>
+                            <a target="__blank" href="https://twitter.com/intent/tweet?text=Discover%20this%20incredible%20application%20for%20productivity!%20%0A%0Apomo-timer.com">
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </a>
+                    </div>
+                </div>
+
+                <div class="description__tutorial">
+                    <h1 class="header__tutorial">
+                        How to Use PomoTimer?
+                    </h1>
+                    <ul class="tutorial-list">
+                        <li>
+                            Take your to-do list and write down your daily tasks 
+                        </li>
+                        <li>
+                            Each task you wrote down will take 25 minutes = 1 pomodoro
+                        </li>  
+                        <li>
+                            Select a task to work on
+                        </li> 
+                        <li>
+                            Start timer and focus on the task for 25 min to complete one focus stage
+                        </li>
+                        <li>
+                            Take a Break for 5 minutes when the alarm sound ring
+                        </li>
+                        <li>
+                            Every 4 pomodoros complete, take a longer break (15:00)
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="description__pomodoro">
+                    <h1 class="header__about-pomodoro">
+                        The Pomodoro Technique
+                    </h1>
+                    <p>
+                        The Pomodoro Technique was created by <span style="color: var(--primary-color);">Francisco Cirillo</span>, one of inspirations for this app. The technique is based in a focus period <span style="color: var(--primary-color);">(25:00)</span> interspersed with a short rest period <span style="color: var(--primary-color);">(5:00)</span> to increase productivity and prevents distractions during job, or study time. Each completed cicle (focus + rest) is known as a <span style="color: var(--primary-color);">Pomodoro</span>, that means Tomato in Italian.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="footer">
+                <div class="footer__links">
+                    <div class="first">
+                        <a href="https://linkedin.com/in/marcelo-martins-moreira/" target="__blank">
+                            <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://github.com/marcelomartinsdev/" target="__blank">
+                            <i class="fa fa-github-square fa-2x" aria-hidden="true"></i>
+                        </a>
+                    </div>
+
+                    <div class="second">
+                        <a href="https://linkedin.com/in/marcoscoutinhodev/" target="__blank">
+                            <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://github.com/marcoscoutinhodev" target="__blank">
+                            <i class="fa fa-github-square fa-2x" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer__credits">
+                    <div class="first-credits">
+                        <span>Made by <span style="color: #DB524D;">Marcelo</span></span>
+                    </div>
+                    &
+                    <div class="second-credits">
+                        <span>Made by <span style="color:#DB524D;">Marcos</span></span>
+                    </div>
+                </div>
+                <div class="footer__allrights">
+                    ©Pomo-Timer 2021. All Rights Reserved.
+                </div>
+                <div class="footer__version">
+                    V 1.0.1
+                </div>
+            </div>
+        </div>
+    </section>
 
     <script src="js/script.js"></script>
 </body>
