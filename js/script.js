@@ -3,8 +3,8 @@ window.addEventListener("load", () => {
     const setting = document.querySelector("#btnSettings");
     const startButton = document.querySelector("#start");
     const resetButton = document.querySelector("#reset");
-    const displayMinutes = document.querySelector("#minutes");
-    const displaySeconds = document.querySelector("#seconds");
+    const displayMinutes = document.querySelector(".minutes");
+    const displaySeconds = document.querySelector(".seconds");
     const pomodoroMin = 24;
     const restMin = 4;
     const longRestMin = 14;
@@ -43,7 +43,7 @@ window.addEventListener("load", () => {
     window.changeTimer = function (color, option) {
         if(isTimerOff) {
             const container = document.querySelector(".container");
-            const titleHeader = document.querySelectorAll(".header-2");
+            const titleHeader = document.querySelectorAll("h1");
     
             container.style.backgroundColor = `#${color}`;
             container.style.transition = "1s";
