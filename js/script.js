@@ -1,6 +1,6 @@
 window.addEventListener("load", () => {
     const sound = document.querySelector("#sound");
-    sound.volume = 0.5;
+    sound.volume = 0.1;
     const setting = document.querySelector("#btnSettings");
     const startButton = document.querySelector("#start");
     const resetButton = document.querySelector("#reset");
@@ -14,6 +14,7 @@ window.addEventListener("load", () => {
     let startMinutes = 24;
     let startSeconds = 60;
     let isTimerOff = true;
+    let userReset = false;
 
     setting.addEventListener("click", settings);
 
@@ -23,7 +24,7 @@ window.addEventListener("load", () => {
         const inputVol = document.querySelector("#audioVol");
         const closeBtn = document.querySelector(".btnClose");
         const buttons = document.querySelectorAll(".grid-container button");
-
+        
         configIcon.style.visibility = "hidden";
         divSet.style.opacity = "1";
         divSet.style.visibility = "visible";
@@ -87,13 +88,13 @@ window.addEventListener("load", () => {
     function startTimer() {
         if (isTimerOff) {
             isTimerOff = false;
-
+            
             let currentMinutes = startMinutes;
             let currentSeconds = startSeconds;
             let interval = setInterval(countTime, 1000);
-
+            
             resetButton.addEventListener("click", resetTime);
-
+            
             function countTime() {
                 currentSeconds--;
 
@@ -104,35 +105,47 @@ window.addEventListener("load", () => {
                         currentMinutes--;
                         currentSeconds = startSeconds;
                     } else {
-                        sound.play();
-
-                        clearInterval(interval);
-
-                        setTimeout(() => {
-                            alert("Time is Over!");
-                        }, 10);
-
                         isTimerOff = true;
+                        userReset = false;
+
+                        resetTime();
                     }
                 }
             }
 
             function updateDisplay() {
-                const checkCount = (currentTime, element) => {
-                    element.innerText = currentTime;
+                const checkCount = (currentTime, element, isMinute) => {
+                    if(isMinute) {
+                        element.innerText = currentTime;
+                    } else {
+                        if (currentTime >= 10) {
+                            element.innerText = currentTime;		
+                        } else {	
+                            element.innerText = `0${currentTime}`;	
+                        }
+                    }
                 }
 
-                checkCount(currentMinutes, displayMinutes);
-                checkCount(currentSeconds, displaySeconds);
+                checkCount(currentMinutes, displayMinutes, true);
+                checkCount(currentSeconds, displaySeconds, false);
             }
 
             function resetTime() {
                 clearInterval(interval);
 
-                displayMinutes.innerText = startMinutes + 1;
-                displaySeconds.innerText = "00";
+                if(isTimerOff && !userReset) {
+                    sound.play();
 
-                isTimerOff = true;
+                    setTimeout(() => {
+                        alert("Time is Over!");
+                    }, 10);    
+                } else {
+                    userReset = true;
+                    isTimerOff = true;
+
+                    displayMinutes.innerText = startMinutes + 1;	
+                    displaySeconds.innerText = "00";
+                }
             }
         }
     }
