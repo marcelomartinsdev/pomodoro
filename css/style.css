@@ -82,6 +82,13 @@ body {
     opacity: 0;
 }
 
+#close {
+    background-color: var(--primary-color);
+    position: absolute;
+    bottom: 1em;
+    left: 5em;
+}
+
 .options {
     display: flex;
     justify-content: center;
@@ -112,7 +119,7 @@ body {
     font-size: var(--space-2xl);
 }
 
-.bottom-buttons > button {
+.bottom-buttons > button, .btnClose {
     height: var(--space-xl);
     width: var(--space-2xl);
     font-size: var(--space-md);

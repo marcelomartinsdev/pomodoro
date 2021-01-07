@@ -1,50 +1,64 @@
 window.addEventListener("load", () => {
     const sound = document.querySelector("#sound");
+    sound.volume = 0.5;
     const setting = document.querySelector("#btnSettings");
     const startButton = document.querySelector("#start");
     const resetButton = document.querySelector("#reset");
     const displayMinutes = document.querySelector(".minutes");
     const displaySeconds = document.querySelector(".seconds");
+
     const pomodoroMin = 24;
     const restMin = 4;
     const longRestMin = 14;
+
     let startMinutes = 24;
     let startSeconds = 60;
     let isTimerOff = true;
-    let showSet = true;
 
-    sound.volume = 0.5;
     setting.addEventListener("click", settings);
 
     function settings() {
+        const configIcon = document.querySelector(".configIcon");
         const divSet = document.querySelector(".settings-container");
         const inputVol = document.querySelector("#audioVol");
+        const closeBtn = document.querySelector(".btnClose");
+        const buttons = document.querySelectorAll(".grid-container button");
 
-        if(showSet) {
-            showSet = false;
+        configIcon.style.visibility = "hidden";
+        divSet.style.opacity = "1";
+        divSet.style.visibility = "visible";
 
-            divSet.style.opacity = "1";
-            divSet.style.visibility = "visible";
+        buttons.forEach((button) => {
+            button.disabled = true;
+        });
 
+        inputVol.addEventListener("change", () => {
+            document.querySelector(".volume")
+                .innerText = `Volume: ${inputVol.value}`;
+                
+            sound.volume = inputVol.value / 10;
+        });
 
-            inputVol.addEventListener("change", () => {
-                document.querySelector(".volume")
-                    .innerText = `Volume: ${inputVol.value}`
-                sound.volume = inputVol.value / 10;
-            });
-        } else {
-            showSet = true;
-
+        closeBtn.addEventListener("click", () => {
+            configIcon.style.visibility = "visible";
             divSet.style.visibility = "hidden";
             divSet.style.opacity = "0";
-        }
+
+            buttons.forEach((button) => {
+                button.disabled = false;
+            });
+        });
     }
 
     window.changeTimer = function (color, option) {
         if(isTimerOff) {
             const container = document.querySelector(".container");
             const titleHeader = document.querySelectorAll("h1");
-    
+            
+            document.querySelector("#close")
+                .style
+                .backgroundColor = `#${color}`;
+
             container.style.backgroundColor = `#${color}`;
             container.style.transition = "1s";
             
@@ -104,13 +118,8 @@ window.addEventListener("load", () => {
             }
 
             function updateDisplay() {
-                function checkCount(currentTime, element) {
-                    if (currentTime >= 10) {
-                        element.innerText = currentTime;
-                        console.log();
-                    } else {
-                        element.innerText = `0${currentTime}`;
-                    }
+                const checkCount = (currentTime, element) => {
+                    element.innerText = currentTime;
                 }
 
                 checkCount(currentMinutes, displayMinutes);
@@ -120,11 +129,7 @@ window.addEventListener("load", () => {
             function resetTime() {
                 clearInterval(interval);
 
-                if (startMinutes != restMin) {
-                    displayMinutes.innerText = `${startMinutes + 1}`;
-                } else {
-                    displayMinutes.innerText = `0${startMinutes + 1}`;
-                }
+                displayMinutes.innerText = startMinutes + 1;
                 displaySeconds.innerText = "00";
 
                 isTimerOff = true;
