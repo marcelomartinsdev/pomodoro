@@ -24,7 +24,7 @@ window.addEventListener("load", () => {
         const inputVol = document.querySelector("#audioVol");
         const closeBtn = document.querySelector(".btnClose");
         const buttons = document.querySelectorAll(".grid-container button");
-        
+
         configIcon.style.visibility = "hidden";
         divSet.style.opacity = "1";
         divSet.style.visibility = "visible";
@@ -132,6 +132,9 @@ window.addEventListener("load", () => {
 
             function resetTime() {
                 clearInterval(interval);
+               
+                displayMinutes.innerText = startMinutes + 1;
+                displaySeconds.innerText = "00";
 
                 if(isTimerOff && !userReset) {
                     sound.play();
@@ -142,9 +145,6 @@ window.addEventListener("load", () => {
                 } else {
                     userReset = true;
                     isTimerOff = true;
-
-                    displayMinutes.innerText = startMinutes + 1;	
-                    displaySeconds.innerText = "00";
                 }
             }
         }
