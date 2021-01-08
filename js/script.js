@@ -1,7 +1,7 @@
 window.addEventListener("load", () => {
     const sound = document.querySelector("#sound");
-    sound.volume = localStorage.soundVolume || 0.1;
-
+    sound.volume = localStorage.soundVolume / 10 || 0.1;
+    
     const setting = document.querySelector("#btnSettings");
     const labelVolume = document.querySelector(".volume");
     const inputVol = document.querySelector("#audioVol");
@@ -27,7 +27,7 @@ window.addEventListener("load", () => {
     setting.addEventListener("click", settings);
 
     const showVolume = (element) => {
-        element.innerText = `Volume: ${localStorage.getItem("soundVolume") * 10}`;
+        element.innerText = `Volume: ${sound.volume * 10}`;
 
         inputVol.value = sound.volume * 10;
     };
@@ -40,18 +40,19 @@ window.addEventListener("load", () => {
         const closeBtn = document.querySelector(".btnClose");
         const buttons = document.querySelectorAll(".grid-container button");
 
+        const toggleBtnAttr = (buttons) => { buttons.toggleAttribute("disabled"); };
+
         configIcon.style.visibility = "hidden";
         divSet.style.opacity = "1";
         divSet.style.visibility = "visible";
 
         buttons.forEach((button) => {
-            button.disabled = true;
+            toggleBtnAttr(button)
         });
 
         inputVol.addEventListener("change", () => {
+            localStorage.setItem("soundVolume", inputVol.value);
             sound.volume = inputVol.value / 10;
-
-            localStorage.setItem("soundVolume", sound.volume);
 
             showVolume(labelVolume);
         });
@@ -62,7 +63,7 @@ window.addEventListener("load", () => {
             divSet.style.opacity = "0";
 
             buttons.forEach((button) => {
-                button.disabled = false;
+                toggleBtnAttr(button);
             });
         });
     }
