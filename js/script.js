@@ -1,12 +1,20 @@
 window.addEventListener("load", () => {
     const sound = document.querySelector("#sound");
-    sound.volume = 0.1;
+    sound.volume = localStorage.volume / 10 || 0.1;
 
     const setting = document.querySelector("#btnSettings");
-    const startButton = document.querySelector("#start");
-    const resetButton = document.querySelector("#reset");
+    const volume = document.querySelector(".volume");
+    const inputVol = document.querySelector("#audioVol");
+
+    const updateLabel = (label) => { label.innerText = `Volume: ${inputVol.value}`; };
+
+    inputVol.value = sound.volume * 10;
+    updateLabel(volume);
+
     const displayMinutes = document.querySelector(".minutes");
     const displaySeconds = document.querySelector(".seconds");
+    const startButton = document.querySelector("#start");
+    const resetButton = document.querySelector("#reset");
 
     const pomodoroMin = 24;
     const restMin = 4;
@@ -22,7 +30,6 @@ window.addEventListener("load", () => {
     function settings() {
         const configIcon = document.querySelector(".configIcon");
         const divSet = document.querySelector(".settings-container");
-        const inputVol = document.querySelector("#audioVol");
         const closeBtn = document.querySelector(".btnClose");
         const buttons = document.querySelectorAll(".grid-container button");
 
@@ -38,14 +45,13 @@ window.addEventListener("load", () => {
 
         toggleBtn(buttons, true);
 
-        inputVol.addEventListener("change", () => {
-            document.querySelector(".volume")
-                .innerText = `Volume: ${inputVol.value}`;
-                
-            sound.volume = inputVol.value / 10;
-        });
+        inputVol.addEventListener("change", () => { updateLabel(volume); });
 
         closeBtn.addEventListener("click", () => {
+            localStorage.setItem("volume", inputVol.value);
+
+            sound.volume = inputVol.value / 10;
+
             configIcon.style.visibility = "visible";
             divSet.style.visibility = "hidden";
             divSet.style.opacity = "0";
