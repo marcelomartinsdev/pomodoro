@@ -27,7 +27,7 @@ window.addEventListener("load", () => {
     setting.addEventListener("click", settings);
 
     const showVolume = (element) => {
-        element.innerText = `Volume: ${sound.volume * 10}`;
+        element.innerText = `Volume: ${ localStorage.getItem("soundVolume") * 10 }`;
 
         inputVol.value = sound.volume * 10;
     };
