@@ -172,5 +172,5 @@ window.addEventListener("load", () => {
 
     document
         .querySelector("#version")
-        .innerText = "Version 1.0.2 (Official Build)";
+        .innerText = "Version 1.0.3 (Official Build)";
 });
