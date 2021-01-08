@@ -174,11 +174,11 @@ body {
 
 .text {
     margin-top: 2rem;
-    text-align: left;
 }
 
 .list {
     margin: 1rem 0rem 0rem 1rem;
+    text-align: left;
 }
 
 .links, .credits {
@@ -202,6 +202,8 @@ body {
     background-color: #f7e5e5;
     border-top: 1px solid rgb(175, 175, 175);
     margin-top: 2rem;
+    padding-top: 1rem;
+    font-size: 15px;
 }
 
 
@@ -241,7 +243,7 @@ body {
     .container-2 {
         text-align: center;
         height: 100vh;
-    }   
+    }
 }
 
 
