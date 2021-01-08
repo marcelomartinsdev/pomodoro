@@ -6,6 +6,9 @@ window.addEventListener("load", () => {
     const resetButton = document.querySelector("#reset");
     const displayMinutes = document.querySelector(".minutes");
     const displaySeconds = document.querySelector(".seconds");
+    const version = document.querySelector("#version");
+
+    version.innerText = "Version 1.0.2 (Official Build)"
 
     const pomodoroMin = 24;
     const restMin = 4;
@@ -54,7 +57,8 @@ window.addEventListener("load", () => {
     window.changeTimer = function (color, option) {
         if(isTimerOff) {
             const container = document.querySelector(".container");
-            const titleHeader = document.querySelectorAll("h1");
+            const titleHeader = document.querySelectorAll(".title");
+            const spotlight = document.querySelectorAll(".spotlight");
             
             document.querySelector("#close")
                 .style
@@ -63,10 +67,16 @@ window.addEventListener("load", () => {
             container.style.backgroundColor = `#${color}`;
             container.style.transition = "1s";
             
-            titleHeader.forEach((title) => {
-                title.style.textDecorationColor = `#${color}`;
-                title.style.transition = "1s";
-            });
+            changeCss(titleHeader);
+            changeCss(spotlight);
+
+            function changeCss(element) {
+                element.forEach((title) => {
+                    title.style.borderColor = `#${color}`;
+                    title.style.color = `#${color}`
+                    title.style.transition = "1s";
+                });
+            }
 
             if(option === 1) {
                 startMinutes = pomodoroMin;
