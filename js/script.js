@@ -164,7 +164,7 @@ window.addEventListener("load", () => {
                 if(isTimerOff && !userReset) {
                     setTimeout(() => {
                         alert("Time is over!");
-                    }, 100);
+                    }, 1000);
 
                     sound.play();
                 } else {
