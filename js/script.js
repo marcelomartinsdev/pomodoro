@@ -3,7 +3,7 @@ window.addEventListener("load", () => {
     sound.volume = localStorage.soundVolume || 0.1;
 
     const setting = document.querySelector("#btnSettings");
-    const labelVolume = document.querySelector(".volume")
+    const labelVolume = document.querySelector(".volume");
     const inputVol = document.querySelector("#audioVol");
 
     const startButton = document.querySelector("#start");
@@ -15,12 +15,6 @@ window.addEventListener("load", () => {
     const version = document.querySelector("#version");
     version.innerText = "Version 1.0.2 (Official Build)";
 
-    const showVolume = (element) => {
-        element.innerText = `Volume: ${sound.volume * 10}`;
-
-        inputVol.value = sound.volume * 10;
-    };
-
     const pomodoroMin = 24;
     const restMin = 4;
     const longRestMin = 14;
@@ -31,6 +25,12 @@ window.addEventListener("load", () => {
     let userReset = false;
 
     setting.addEventListener("click", settings);
+
+    const showVolume = (element) => {
+        element.innerText = `Volume: ${sound.volume * 10}`;
+
+        inputVol.value = sound.volume * 10;
+    };
 
     function settings() {
         showVolume(labelVolume);
