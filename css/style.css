@@ -180,6 +180,10 @@ body {
     text-align: left;
 }
 
+.list li {
+    padding-top: 5px;
+}
+
 .links, .credits {
     display: flex;
     justify-content: space-around;
