@@ -159,7 +159,6 @@ body {
 
 .description h1 {
     border-bottom: 2px solid var(--primary-color);
-    display: inline-block;
 }
 
 .spotlight {
