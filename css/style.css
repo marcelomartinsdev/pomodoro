@@ -173,6 +173,7 @@ body {
 
 .text {
     margin-top: 2rem;
+    text-align: left;
 }
 
 .list {
