@@ -33,22 +33,15 @@ window.addEventListener("load", () => {
     };
 
     function settings() {
-        showVolume(labelVolume);
-
         const configIcon = document.querySelector(".configIcon");
         const divSet = document.querySelector(".settings-container");
         const closeBtn = document.querySelector(".btnClose");
-        const buttons = document.querySelectorAll(".grid-container button");
-
-        const toggleBtnAttr = (buttons) => { buttons.toggleAttribute("disabled"); };
+        
+        showVolume(labelVolume);
 
         configIcon.style.visibility = "hidden";
         divSet.style.opacity = "1";
         divSet.style.visibility = "visible";
-
-        buttons.forEach((button) => {
-            toggleBtnAttr(button)
-        });
 
         inputVol.addEventListener("change", () => {
             localStorage.setItem("soundVolume", inputVol.value);
@@ -61,10 +54,6 @@ window.addEventListener("load", () => {
             configIcon.style.visibility = "visible";
             divSet.style.visibility = "hidden";
             divSet.style.opacity = "0";
-
-            buttons.forEach((button) => {
-                toggleBtnAttr(button);
-            });
         });
     }
 
