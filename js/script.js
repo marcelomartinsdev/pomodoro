@@ -64,6 +64,9 @@ window.addEventListener("load", () => {
                 .style
                 .backgroundColor = `#${color}`;
 
+            document.querySelector("body")
+                .style.backgroundColor = `#${color}`;
+
             container.style.backgroundColor = `#${color}`;
             container.style.transition = "1s";
             

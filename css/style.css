@@ -28,6 +28,7 @@ html {
 
 body {
     font-weight: 400;
+    background-color: var(--primary-color);
 }
 
 /* FIRST PAGE STYLE */
