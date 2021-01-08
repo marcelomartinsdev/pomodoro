@@ -1,15 +1,16 @@
 window.addEventListener("load", () => {
     const sound = document.querySelector("#sound");
-    sound.volume = localStorage.volume / 10 || 0.1;
+    sound.volume = 
+        localStorage.volume >= 0 && localStorage.volume <= 10 ?
+        localStorage.volume / 10 : 0.1;
+
 
     const setting = document.querySelector("#btnSettings");
     const volume = document.querySelector(".volume");
     const inputVol = document.querySelector("#audioVol");
 
     const updateLabel = (label) => { label.innerText = `Volume: ${inputVol.value}`; };
-
     inputVol.value = sound.volume * 10;
-    updateLabel(volume);
 
     const displayMinutes = document.querySelector(".minutes");
     const displaySeconds = document.querySelector(".seconds");
@@ -28,6 +29,8 @@ window.addEventListener("load", () => {
     setting.addEventListener("click", settings);
 
     function settings() {
+        updateLabel(volume);
+
         const configIcon = document.querySelector(".configIcon");
         const divSet = document.querySelector(".settings-container");
         const saveButton = document.querySelector(".btnSave");
