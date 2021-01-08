@@ -124,7 +124,7 @@ body {
     font-size: var(--space-2xl);
 }
 
-.bottom-buttons > button, .btnClose {
+.bottom-buttons > button, .btnSave {
     height: var(--space-xl);
     width: var(--space-2xl);
     font-size: var(--space-md);

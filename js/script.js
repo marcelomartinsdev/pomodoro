@@ -30,7 +30,7 @@ window.addEventListener("load", () => {
     function settings() {
         const configIcon = document.querySelector(".configIcon");
         const divSet = document.querySelector(".settings-container");
-        const closeBtn = document.querySelector(".btnClose");
+        const saveButton = document.querySelector(".btnSave");
         const buttons = document.querySelectorAll(".grid-container button");
 
         configIcon.style.visibility = "hidden";
@@ -47,7 +47,7 @@ window.addEventListener("load", () => {
 
         inputVol.addEventListener("change", () => { updateLabel(volume); });
 
-        closeBtn.addEventListener("click", () => {
+        saveButton.addEventListener("click", () => {
             localStorage.setItem("volume", inputVol.value);
 
             sound.volume = inputVol.value / 10;
