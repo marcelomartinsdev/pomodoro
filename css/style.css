@@ -86,7 +86,7 @@ body {
     opacity: 0;
 }
 
-#close {
+#save {
     background-color: var(--primary-color);
     position: absolute;
     bottom: 1em;

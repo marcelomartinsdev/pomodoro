@@ -68,28 +68,30 @@ window.addEventListener("load", () => {
             const container = document.querySelector(".container");
             const titleHeader = document.querySelectorAll(".title");
             const spotlight = document.querySelectorAll(".spotlight");
-            
-            document.querySelector("#close")
+
+            const applyBgColor = (element) => { 
+                document
+                .querySelector(element)
                 .style
                 .backgroundColor = `#${color}`;
+            };
 
-            document.querySelector("body")
-                .style
-                .backgroundColor = `#${color}`;
+            applyBgColor("#save");
+            applyBgColor("body");
+            applyBgColor(".container");
 
-            container.style.backgroundColor = `#${color}`;
             container.style.transition = "1s";
-            
-            changeCss(titleHeader);
-            changeCss(spotlight);
 
             function changeCss(element) {
-                element.forEach((title) => {
-                    title.style.borderColor = `#${color}`;
-                    title.style.color = `#${color}`
-                    title.style.transition = "1s";
+                element.forEach((el) => {
+                    el.style.borderColor = `#${color}`;
+                    el.style.color = `#${color}`
+                    el.style.transition = "1s";
                 });
             }
+
+            changeCss(titleHeader);
+            changeCss(spotlight);
 
             if(option === 1) {
                 startMinutes = pomodoroMin;
