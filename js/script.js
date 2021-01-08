@@ -24,7 +24,7 @@ window.addEventListener("load", () => {
     let startMinutes = 24;
     let startSeconds = 60;
     let isTimerOff = true;
-    let userReset = false;
+    let userReset = true;
 
     setting.addEventListener("click", settings);
 
@@ -162,11 +162,11 @@ window.addEventListener("load", () => {
                 displaySeconds.innerText = "00";
 
                 if(isTimerOff && !userReset) {
-                    sound.play();
-
                     setTimeout(() => {
-                        alert("Time is Over!");
-                    }, 10);    
+                        alert("Time is over!");
+                    }, 100);
+
+                    sound.play();
                 } else {
                     userReset = true;
                     isTimerOff = true;
