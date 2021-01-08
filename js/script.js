@@ -30,9 +30,13 @@ window.addEventListener("load", () => {
         divSet.style.opacity = "1";
         divSet.style.visibility = "visible";
 
-        buttons.forEach((button) => {
-            button.disabled = true;
-        });
+        const toggleBtn = (buttons, option) => {
+            buttons.forEach((button) => {
+                button.disabled = option;
+            });
+        }
+
+        toggleBtn(buttons, true);
 
         inputVol.addEventListener("change", () => {
             document.querySelector(".volume")
@@ -46,9 +50,7 @@ window.addEventListener("load", () => {
             divSet.style.visibility = "hidden";
             divSet.style.opacity = "0";
 
-            buttons.forEach((button) => {
-                button.disabled = false;
-            });
+            toggleBtn(buttons, false);
         });
     }
 
